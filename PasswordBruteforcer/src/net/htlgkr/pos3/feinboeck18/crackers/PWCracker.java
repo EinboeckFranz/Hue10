@@ -90,6 +90,7 @@ public class PWCracker {
 
     //Also found this piece of Code on Stack Overflow
     public String getNextValueToCheck(String currentValue, int index) {
+        StringBuilder currentBuilder = new StringBuilder();
         char[] currentValueAsCharArray = currentValue.toCharArray();
         int intValueOfChar = currentValueAsCharArray[index];
         intValueOfChar = intValueOfChar + 1;
@@ -115,16 +116,20 @@ public class PWCracker {
                     currentValueAsCharArray[index] = 97;
                 break;
                 case 123:
+                    if(index == 0) return null;
                     if(!(this.passwordLevel == 0))
                         currentValueAsCharArray[index] = 48;
                     else
                         currentValueAsCharArray[index] = 97;
+
+                    for (char c :currentValueAsCharArray)
+                        currentBuilder.append(c);
+                    return getNextValueToCheck(currentBuilder.toString(), index-1);
                 default:
                     currentValueAsCharArray[index] = (char) intValueOfChar;
                 break;
             }
         }
-
         return String.valueOf(currentValueAsCharArray);
     }
 }
