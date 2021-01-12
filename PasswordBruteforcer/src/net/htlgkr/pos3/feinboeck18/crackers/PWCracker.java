@@ -68,7 +68,7 @@ public class PWCracker {
         int intValueOfChar = charsOfStartValue[0];
         intValueOfChar = intValueOfChar + 1;
 
-        if(passwordLevel == 1) {
+        if(this.passwordLevel == 1) {
             if(intValueOfChar==91)
                 return null;
         } else {
@@ -95,7 +95,7 @@ public class PWCracker {
         intValueOfChar = intValueOfChar + 1;
 
         //LEVEL 1 Logic
-        if (passwordLevel == 1) {
+        if (this.passwordLevel == 1) {
             if (intValueOfChar == 91) {
                 if (index == 0)
                     return null;
@@ -115,7 +115,7 @@ public class PWCracker {
                     currentValueAsCharArray[index] = 97;
                 break;
                 case 123:
-                    if(!(passwordLevel == 0))
+                    if(!(this.passwordLevel == 0))
                         currentValueAsCharArray[index] = 48;
                     else
                         currentValueAsCharArray[index] = 97;

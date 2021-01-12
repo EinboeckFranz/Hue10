@@ -15,7 +15,7 @@ public class Main {
     }
 
     public void run() {
-        String pathAsString = "numbers/numbers4";
+        String pathAsString = "numbers/numbers0";
         Path path = new File(pathAsString).toPath();
         int subArraySize;
         List<Integer> numbers;
